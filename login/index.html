@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="container">
+    <header>
+       <span>关闭</span>
+       <span>登陆</span>
+       <span>注册</span>
+    </header>
+    <div class="main">
+      <div class="main_phone">
+          <div><img src="img/iphone.png" alt=""></div>
+          <input type="text" placeholder="请输入手机号">
+      </div>
+      <div class="main_phone">
+        <div><img src="img/locked2.png" alt=""></div>
+        <input type="text" placeholder="请输入密码">
+      </div>
+    </div>
+    <div class="footer">
+        <button id="login">登陆</button>
+    </div>
+    <div class="footer_end"><a href="javascript:;">忘记密码？</a></div>
+    </div>
+    <script>
+var login=document.getElementById("login");
+  login.onclick=function(){
+    var confi=confirm("你真想登录");
+    if(confi == true){
+         document.write("我就是个静态的，你登啥登啊！");
+    }else{
+          alert("哈哈");
+    }
+  }
+
+    </script>
+</body>
+</html>
