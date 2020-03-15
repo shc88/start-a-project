@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=[2,8,5,0,5,2,2,6,7,2];
+    for(var i=0;i<arr.length;i++){
+         for(var j=i+1;j<arr.length;j++){
+              //判断两个元素是否相等
+             if(arr[i] == arr[j]){
+                  arr.splice(j,1);
+             // 当删除了当前j所在的元素以后，后面的元素会自动补位
+             //    此时将不会再比较这个元素了，我们需要在比较一下所在位置的元素
+             //    使j自减
+                 j--;
+             }
+       }
+    }
+    console.log(arr);
+</script>
+</body>
+</html>

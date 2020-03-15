@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <style>
+
+        div{
+            padding-left:31%;
+            padding-bottom: 31%;
+            margin:1%;
+            border-radius: 20%;
+            background: orange;
+            float:left;
+        }
+        #btn1{
+             width: 40%;
+            height: 100px;
+            background-color: orange;
+        }
+        #btn2{
+            width: 40%;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<button id="btn1">开始</button>
+<button id="btn2">结束</button>
+<script>
+    /*
+
+     */
+    var btn1=document.getElementById("btn1");
+    var btn2=document.getElementById("btn2");
+    var divs=document.getElementsByTagName("div");
+var colors=['red','plum','blue','green','cyan','black','pink','gray','brown'];
+function start(){
+    for(var i=0;i<divs.length;i++){  //第一步   重置背景颜色
+         divs[i].style.backgroundColor="orange";
+    }
+    var arr=[];
+    //第二步创建数组，容纳随机数
+    var arr1=[];
+    // 创建第一组数组
+  for(var i =0;i<4;i++){
+      var item = divs[Math.floor(Math.random()*divs.length)];
+     arr.push(item);
+        for(var v=0;v<arr.length;v++){
+            for(var i =v+1;i<arr.length;i++){
+                   if(arr[v] == arr[i]){
+                    arr.splice(i,1);
+                    i--;
+                }
+            }
+        }
+  }
+ for(var j=0;j<8;j++){
+     //循环三次 给三个颜色的值
+     var items = colors[Math.floor(Math.random()*divs.length)];  //
+     arr1.push(items);
+     for(var v=0;v<arr1.length;v++){
+         for(var i=v+1;i<arr1.length;i++){
+             if(arr1[v] == arr1[i]){
+                 arr1.splice(i,1);
+                 i--;
+             }
+        }
+     }
+
+ }
+
+ for(var i=0;i<arr.length;i++){
+for(var z=0;z<3;z++){
+    arr[z].style.backgroundColor=arr1[z];
+}
+ }
+}
+var times;
+btn1.onclick=function () {
+    times=setInterval(function(){
+        start();
+    },1000);
+}
+btn2.onclick=function(){
+    clearInterval(times);
+}
+
+</script>
+</body>
+</html>
